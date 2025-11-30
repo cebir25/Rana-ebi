@@ -231,7 +231,7 @@ useEffect(() => {
         setAvatarStatus(AvatarStatus.LISTENING);
         
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: "AIzaSyDRak3K6ZJh9I1SSywzdTRZt9_qkHhRB0c" });
             
             inputAudioContext.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
             outputAudioContext.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
@@ -381,7 +381,7 @@ useEffect(() => {
         type ApiPart = { text: string } | { inlineData: { mimeType: string; data: string; } } | { fileData: { mimeType: string; fileUri: string; } };
 
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: "AIzaSyDRak3K6ZJh9I1SSywzdTRZt9_qkHhRB0c" });
             
             const modelName = useThinkingMode || incomingParts.some(p => p.imageUrl) || activeFile || containsUrl
                 ? 'gemini-3-pro-preview'
@@ -468,7 +468,7 @@ useEffect(() => {
         setActiveFile(null);
 
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: "AIzaSyDRak3K6ZJh9I1SSywzdTRZt9_qkHhRB0c" });
             const result = await ai.files.upload({ file: file });
             
             const uploadedFile = result;
